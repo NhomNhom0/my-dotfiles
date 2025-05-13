@@ -61,3 +61,9 @@ echo "Creating symlinks for dotfiles…"
 ln -sf "$HOME/my-dotfiles/zsh/zshrc" "$HOME/.zshrc"
 ln -sf "$HOME/my-dotfiles/zsh/p10k.zsh" "$HOME/.p10k.zsh"
 ln -sf "$HOME/my-dotfiles/neofetch/config.conf" "$HOME/.config/neofetch/config.conf"
+
+# Set zsh as the default shell
+if [ "$SHELL" != "$(which zsh)" ]; then
+    echo "Setting zsh as the default shell…"
+    chsh -s "$(which zsh)"
+fi
