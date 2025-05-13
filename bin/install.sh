@@ -48,9 +48,9 @@ if [ ! -d "$HOME/.oh-my-zsh/custom/plugins/zsh-history-substring-search" ]; then
 fi
 
 # Clone or update the repo
-if [ -d "$HOME/.my-dotfiles" ]; then
+if [ -d "$HOME/my-dotfiles" ]; then
     echo "Updating existing dotfiles…"
-    git -C "$HOME/.my-dotfiles" pull
+    git -C "$HOME/my-dotfiles" pull
 else
     echo "Cloning dotfiles…"
     git clone https://github.com/NhomNhom0/my-dotfiles "$HOME/my-dotfiles"
