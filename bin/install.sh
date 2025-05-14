@@ -69,7 +69,7 @@ fi
 
 # Create symlinks for dotfiles
 echo "Creating symlinks for dotfiles…"
-ln -sf $HOME/my-dotfiles/zsh/* $HOME/
+ln -sf $HOME/my-dotfiles/zsh/.* $HOME/
 ln -sf $HOME/my-dotfiles/neofetch/* $HOME/.config/neofetch/
 ln -sf $HOME/my-dotfiles/kitty/* $HOME/.config/kitty/
 ln -sf $HOME/my-dotfiles/fonts/* $HOME/.fonts/
