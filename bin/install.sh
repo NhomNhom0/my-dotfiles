@@ -78,8 +78,8 @@ ln -sf "$HOME/my-dotfiles/neofetch/config.conf" "$HOME/.config/neofetch/config.c
 
 # Set zsh as the default shell
 if [ "$SHELL" != "$(which zsh)" ]; then
-    echo "Setting zsh as the default shell…"
-    chsh -s "$(which zsh)" "$USER"
+    echo "To set zsh as the default shell, run the following command:"
+    echo "chsh -s $(which zsh)"
 else
     echo "✅ Zsh is already the default shell"
 fi
