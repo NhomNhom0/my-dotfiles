@@ -62,7 +62,10 @@ HISTFILESIZE=2000
 [[ ! -f $HOME/.p10k.zsh ]] || source $HOME/.p10k.zsh
 
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
-neofetch
+
+# if [[ "$TERM" == "xterm-kitty" ]]; then
+#   ( sleep 0.2 && neofetch --backend kitty ) &
+# fi
 
 
 export PATH=$PATH:$HOME/.spicetify
