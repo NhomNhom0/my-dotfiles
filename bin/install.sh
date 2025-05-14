@@ -2,71 +2,61 @@
 
 echo "👋 Hello! Installing my dotfiles…"
 
-# Check if zsh is installed
-if ! command -v zsh >/dev/null 2>&1; then
-    echo "Please install zsh!"
-    exit 1
-else
-    echo "✅ Zsh has been installed"
-fi
-# Check if git is installed
-if ! command -v git >/dev/null 2>&1; then
-    echo "Please install git!"
-    exit 1
-fi
+# Helper function for command checks
+check_command() {
+    local tool=$1
+
+    echo -n "Checking for $tool... "
+    if ! command -v "$tool" >/dev/null 2>&1; then
+        echo ""
+        echo "❌ Please install $tool!"
+        return 1
+    else
+        echo ""
+        return 0
+    fi
+}
+
+# Check required binaries
+required_commands=("zsh" "git" "neofetch" "kitty")
+missing_any=false
+
+echo "📋 Checking required packages..."
+for cmd in "${required_commands[@]}"; do
+    if ! check_command "$cmd"; then
+        exit 1
+    fi
+done
+echo "📦 All required packages are installed"
+
 # Check if oh-my-zsh is installed
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
     echo "Installing oh-my-zsh…"
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-else
-    echo "✅ Oh-my-zsh is already installed"
-fi
-# Check neofetch is installed
-if ! command -v neofetch >/dev/null 2>&1; then
-    echo "Please install neofetch!"
-    exit 1
-else
-    echo "✅ Neofetch is already installed"
-fi
-# Check if kitty is installed
-if ! command -v kitty >/dev/null 2>&1; then
-    echo "Please install kitty!"
-    exit 1
-else
-    echo "✅ Kitty is already installed"
 fi
 
-# Install Powerlevel10k theme
-if [ ! -d "$HOME/.oh-my-zsh/custom/themes/powerlevel10k" ]; then
-    echo "Installing Powerlevel10k theme…"
-    git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k"
-else
-    echo "✅ Powerlevel10k theme is already installed"
-fi
+# Function to install ZSH plugins/themes
+install_zsh_addon() {
+    local name=$1
+    local type=$2
+    local repo=$3
+    local path="${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/${type}/${name}"
+    local git_options=$4
+    
+    if [ ! -d "$path" ]; then
+        echo "Installing $name $type…"
+        git clone $git_options "$repo" "$path"
+    else
+        echo "✅ $name $type is already installed"
+    fi
+}
 
-# Install zsh-autosuggestions plugin
-if [ ! -d "$HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions" ]; then
-    echo "Installing zsh-autosuggestions plugin…"
-    git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-else
-    echo "✅ zsh-autosuggestions plugin is already installed"
-fi
-
-# Install F-Sy-H plugin
-if [ ! -d "$HOME/.oh-my-zsh/custom/plugins/F-Sy-H" ]; then
-    echo "Installing F-Sy-H plugin…"
-    git clone https://github.com/z-shell/F-Sy-H.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/F-Sy-H
-else
-    echo "✅ F-Sy-H plugin is already installed"
-fi
-
-# Install zsh-history-substring-search plugin
-if [ ! -d "$HOME/.oh-my-zsh/custom/plugins/zsh-history-substring-search" ]; then
-    echo "Installing zsh-history-substring-search plugin…"
-     git clone https://github.com/zsh-users/zsh-history-substring-search ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-history-substring-search
-else
-    echo "✅ zsh-history-substring-search plugin is already installed"
-fi
+# Install themes and plugins
+echo "🔌 Installing Oh My Zsh addons..."
+install_zsh_addon "powerlevel10k" "themes" "https://github.com/romkatv/powerlevel10k.git" "--depth=1"
+install_zsh_addon "zsh-autosuggestions" "plugins" "https://github.com/zsh-users/zsh-autosuggestions"
+install_zsh_addon "F-Sy-H" "plugins" "https://github.com/z-shell/F-Sy-H.git"
+install_zsh_addon "zsh-history-substring-search" "plugins" "https://github.com/zsh-users/zsh-history-substring-search"
 
 # Clone or update the repo
 if [ -d "$HOME/my-dotfiles" ]; then
@@ -88,6 +78,4 @@ ln -sf "$HOME/my-dotfiles/kitty/*" "$HOME/.config/kitty/"
 if [ "$SHELL" != "$(which zsh)" ]; then
     echo "To set zsh as the default shell, run the following command:"
     echo "chsh -s $(which zsh)"
-else
-    echo "✅ Zsh is already the default shell"
 fi
