@@ -215,7 +215,7 @@
   typeset -g POWERLEVEL9K_OS_ICON_FOREGROUND=236   # Base
   typeset -g POWERLEVEL9K_OS_ICON_BACKGROUND=147   # Lavender
   # Custom icon.
-  typeset -g POWERLEVEL9K_OS_ICON_CONTENT_EXPANSION=''
+  typeset -g POWERLEVEL9K_OS_ICON_CONTENT_EXPANSION=''
 
   ################################[ prompt_char: prompt symbol ]################################
   # Transparent background.
