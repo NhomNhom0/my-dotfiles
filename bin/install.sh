@@ -28,6 +28,13 @@ if ! command -v neofetch >/dev/null 2>&1; then
 else
     echo "✅ Neofetch is already installed"
 fi
+# Check if kitty is installed
+if ! command -v kitty >/dev/null 2>&1; then
+    echo "Please install kitty!"
+    exit 1
+else
+    echo "✅ Kitty is already installed"
+fi
 
 # Install Powerlevel10k theme
 if [ ! -d "$HOME/.oh-my-zsh/custom/themes/powerlevel10k" ]; then
@@ -74,7 +81,8 @@ fi
 echo "Creating symlinks for dotfiles…"
 ln -sf "$HOME/my-dotfiles/zsh/zshrc" "$HOME/.zshrc"
 ln -sf "$HOME/my-dotfiles/zsh/p10k.zsh" "$HOME/.p10k.zsh"
-ln -sf "$HOME/my-dotfiles/neofetch/config.conf" "$HOME/.config/neofetch/config.conf"
+ln -sf "$HOME/my-dotfiles/neofetch/*" "$HOME/.config/neofetch/"
+ln -sf "$HOME/my-dotfiles/kitty/*" "$HOME/.config/kitty/"
 
 # Set zsh as the default shell
 if [ "$SHELL" != "$(which zsh)" ]; then
