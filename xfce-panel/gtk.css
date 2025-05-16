@@ -1,0 +1,100 @@
+#XfcePanelWindow {
+  border-radius: 10px;
+  background-clip: padding-box;
+  background-color: rgba(30, 32, 48); /* Adjust as needed */
+}
+
+#xfce4-notification-plugin image{
+	color: #FA003F
+}
+
+#xfce4-power-manager-plugin image {
+	color: #FFEE8C
+}
+
+
+#pulseaudio-button image {
+	color: #60D27D
+}
+
+/* Targeting the XfcePagerPlugin workspace buttons */
+#pager-11 #xfce-panel-toggle-button {
+    margin: 0 12px;  /* Adjust this value to increase horizontal spacing */
+    padding: 5px 10px;  /* Adjust internal button padding */
+    border-radius: 10px;  /* Optional rounded corners */
+}
+
+#pager-11 #xfce-panel-toggle-button:hover,
+#pager-11 #xfce-panel-toggle-button:checked {
+    border-radius: 6px;
+	background-color: rgb(74, 82, 138);
+	
+}
+
+#pager-11 #xfce-panel-toggle-button:checked {
+	border-bottom: 2.5px solid #F49BAB;
+}
+
+/* Apply Semi-Transparent White Background to Panel Items */
+.xfce4-panel .tasklist,
+#launcher-arrow,
+#whiskermenu-button,
+#clock-button,
+#xfce4-notification-plugin,
+#pulseaudio-button,
+#xfce4-power-manager-plugin,
+#xfce4-clipman-plugin,
+#showdesktop-button,
+#indicator-button {
+	margin: 2px 6px;
+	padding: 6px 12px;
+	border-radius: 6px;
+}
+
+/* Maintain background color on hover and when checked */
+.xfce4-panel .tasklist:hover,
+#launcher-arrow:hover,
+#whiskermenu-button:hover,
+#clock-button:hover,
+#xfce4-notification-plugin:hover,
+#pulseaudio-button:hover,
+#xfce4-power-manager-plugin:hover,
+#xfce4-clipman-plugin:hover,
+#showdesktop-button:hover,
+#indicator-button:hover {
+  background-color: rgb(74, 82, 138); /* Maintain this background color on hover/checked */
+  margin: 2px 6px;
+  padding: 6px 12px;
+  border-radius: 6px;
+}
+
+.xfce4-panel .tasklist:checked,
+#launcher-arrow:checked,
+#whiskermenu-button:checked,
+#clock-button:checked,
+#xfce4-notification-plugin:checked,
+#pulseaudio-button:checked,
+#xfce4-power-manager-plugin:checked,
+#xfce4-clipman-plugin:checked,
+#showdesktop-button:checked,
+#indicator-button:checked {
+  background-color: rgb(74, 82, 138); /* Maintain this background color on hover/checked */
+  margin: 2px 6px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: 1px solid #F49BAB;
+}
+
+/* Override Background for tasklist-13 */
+#tasklist-13 .toggle {
+	background-color: transparent;
+	border-radius: 6px;
+	padding:0;
+	margin:0;
+}
+
+#tasklist-13 .toggle:checked {
+	border-radius: 6px;
+	background-color: rgb(74, 82, 138);
+	border-bottom: 2.5px solid #F49BAB;
+}

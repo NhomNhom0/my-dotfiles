@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Power Menu
+Comment=
+Exec=rofi-powermenu
+Icon=emblem-debian-white
+Path=
+Terminal=false
+StartupNotify=false
