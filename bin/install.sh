@@ -18,8 +18,7 @@ check_command() {
 }
 
 # Check required binaries
-required_commands=("zsh" "git" "neofetch" "kitty")
-missing_any=false
+required_commands=("zsh" "git" "neofetch" "kitty", "btop")
 
 echo "📋 Checking required packages..."
 for cmd in "${required_commands[@]}"; do
@@ -72,9 +71,24 @@ echo "Creating symlinks for dotfiles…"
 ln -sf $HOME/my-dotfiles/zsh/.p10k.zsh $HOME/.p10k.zsh
 ln -sf $HOME/my-dotfiles/zsh/.zprofile $HOME/.zprofile
 ln -sf $HOME/my-dotfiles/zsh/.zshrc $HOME/.zshrc
-ln -sf $HOME/my-dotfiles/neofetch/* $HOME/.config/neofetch/
-ln -sf $HOME/my-dotfiles/kitty/* $HOME/.config/kitty/
 ln -sf $HOME/my-dotfiles/fonts/* $HOME/.fonts/
+# Handle .config directories and symlinks
+for config_dir in "neofetch" "kitty" "btop"; do
+    config_path="$HOME/.config/$config_dir"
+    dotfiles_path="$HOME/my-dotfiles/$config_dir"
+
+    if [ ! -d "$config_path" ]; then
+        echo "Creating directory: $config_path"
+        mkdir -p "$config_path"
+    fi
+
+    # Remove any existing files or directories in the config path
+    find "$config_path" -mindepth 1 -delete
+
+    # Create the symlink
+    echo "Creating symlink: $config_path -> $dotfiles_path"
+    ln -sf $dotfiles_path/* $config_path/
+done
 
 # Set zsh as the default shell
 if [ "$SHELL" != "$(which zsh)" ]; then
