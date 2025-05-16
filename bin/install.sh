@@ -2,6 +2,15 @@
 
 echo "👋 Hello! Installing my dotfiles…"
 
+# Clone or update the repo
+if [ -d "$HOME/my-dotfiles" ]; then
+    echo "Updating existing dotfiles…"
+    git -C "$HOME/my-dotfiles" pull
+else
+    echo "Cloning dotfiles…"
+    git clone https://github.com/NhomNhom0/my-dotfiles "$HOME/my-dotfiles"
+fi
+
 # Helper function for command checks
 check_command() {
     local tool=$1
@@ -18,7 +27,7 @@ check_command() {
 }
 
 # Check required binaries
-required_commands=("zsh" "git" "neofetch" "kitty", "btop")
+required_commands=("zsh" "git" "neofetch" "kitty" "btop")
 
 echo "📋 Checking required packages..."
 for cmd in "${required_commands[@]}"; do
@@ -56,15 +65,6 @@ install_zsh_addon "powerlevel10k" "themes" "https://github.com/romkatv/powerleve
 install_zsh_addon "zsh-autosuggestions" "plugins" "https://github.com/zsh-users/zsh-autosuggestions"
 install_zsh_addon "F-Sy-H" "plugins" "https://github.com/z-shell/F-Sy-H.git"
 install_zsh_addon "zsh-history-substring-search" "plugins" "https://github.com/zsh-users/zsh-history-substring-search"
-
-# Clone or update the repo
-if [ -d "$HOME/my-dotfiles" ]; then
-    echo "Updating existing dotfiles…"
-    git -C "$HOME/my-dotfiles" pull
-else
-    echo "Cloning dotfiles…"
-    git clone https://github.com/NhomNhom0/my-dotfiles "$HOME/my-dotfiles"
-fi
 
 # Create symlinks for dotfiles
 echo "Creating symlinks for dotfiles…"
