@@ -7,6 +7,7 @@ fi
 
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
+export XDG_CONFIG_HOME="$HOME/.config"
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
@@ -20,11 +21,17 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
+# Prevent accidental Ctrl+D from closing the shell
+setopt IGNORE_EOF
+# Make Ctrl+D delete word forward (like Alt+d)
+bindkey '^D' backward-kill-word
+
 # Aliases
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 alias cls='clear'
+alias sp='spotify_player'
 
 # Environment variables
 export CUDA_HOME=/usr/local/cuda-12.6
@@ -49,7 +56,17 @@ unset __conda_setup
 # Mamba setup
 if [ -f "$HOME/miniforge3/etc/profile.d/mamba.sh" ]; then
     . "$HOME/miniforge3/etc/profile.d/mamba.sh"
+    mamba activate base
+    
+    # Fix terminal settings AFTER mamba activation
+    export TERMINFO=/usr/share/terminfo
+    if [ -n "$TMUX" ]; then
+        export TERM=screen-256color
+    else
+        export TERM=xterm-kitty
+    fi
 fi
+
 
 # History settings
 setopt HIST_IGNORE_DUPS
@@ -65,11 +82,3 @@ typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 
 # if [[ "$TERM" == "xterm-kitty" ]]; then
 #   ( sleep 0.2 && neofetch --backend kitty ) &
-# fi
-
-
-export PATH=$PATH:$HOME/.spicetify
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

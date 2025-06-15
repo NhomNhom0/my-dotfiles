@@ -27,7 +27,7 @@ check_command() {
 }
 
 # Check required binaries
-required_commands=("zsh" "git" "neofetch" "kitty" "btop")
+required_commands=("zsh" "git" "neofetch" "kitty" "btop" "spotify_player" "cava")
 
 echo "📋 Checking required packages..."
 for cmd in "${required_commands[@]}"; do
@@ -71,9 +71,11 @@ echo "Creating symlinks for dotfiles…"
 ln -sf $HOME/my-dotfiles/zsh/.p10k.zsh $HOME/.p10k.zsh
 ln -sf $HOME/my-dotfiles/zsh/.zprofile $HOME/.zprofile
 ln -sf $HOME/my-dotfiles/zsh/.zshrc $HOME/.zshrc
-ln -sf $HOME/my-dotfiles/fonts/* $HOME/.fonts/
+sudo ln -sf $HOME/my-dotfiles/fonts/* /usr/share/fonts/truetype
+sudo ln -sf $HOME/my-dotfiles/themes/* /usr/share/themes/
+
 # Handle .config directories and symlinks
-for config_dir in "neofetch" "kitty" "btop"; do
+for config_dir in "neofetch" "kitty" "btop" "spotify-player" "cava"; do
     config_path="$HOME/.config/$config_dir"
     dotfiles_path="$HOME/my-dotfiles/$config_dir"
 
