@@ -36,7 +36,7 @@ album_percent = 40
 [device]
 name = "spotify-cli_pop-os"
 device_type = "speaker"
-volume = 100
+volume = 65
 bitrate = 320
 audio_cache = false
 normalization = false

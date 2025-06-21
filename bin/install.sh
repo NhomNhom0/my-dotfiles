@@ -27,7 +27,7 @@ check_command() {
 }
 
 # Check required binaries
-required_commands=("zsh" "git" "neofetch" "kitty" "btop" "spotify_player" "cava")
+required_commands=("zsh" "git" "neofetch" "kitty" "btop" "spotify_player")
 
 echo "📋 Checking required packages..."
 for cmd in "${required_commands[@]}"; do
@@ -75,7 +75,7 @@ sudo ln -sf $HOME/my-dotfiles/fonts/* /usr/share/fonts/truetype
 sudo ln -sf $HOME/my-dotfiles/themes/* /usr/share/themes/
 
 # Handle .config directories and symlinks
-for config_dir in "neofetch" "kitty" "btop" "spotify-player" "cava"; do
+for config_dir in "neofetch" "kitty" "btop" "spotify-player"; do
     config_path="$HOME/.config/$config_dir"
     dotfiles_path="$HOME/my-dotfiles/$config_dir"
 
@@ -91,6 +91,20 @@ for config_dir in "neofetch" "kitty" "btop" "spotify-player" "cava"; do
     echo "Creating symlink: $config_path -> $dotfiles_path"
     ln -sf $dotfiles_path/* $config_path/
 done
+
+# Symlink for XFCE panel and GTK config
+
+# 1. xfce4-panel.xml
+mkdir -p "$HOME/.config/xfce4/xfconf/xfce-perchannel-xml"
+ln -sf "$HOME/my-dotfiles/xfce-panel/xfce4-panel.xml" "$HOME/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-panel.xml"
+
+# 2. xfce4 panel directory
+mkdir -p "$HOME/.config/xfce4/panel"
+ln -sf $HOME/my-dotfiles/xfce-panel/panel/* $HOME/.config/xfce4/panel/
+
+# 3. gtk-3.0 gtk.css
+mkdir -p "$HOME/.config/gtk-3.0"
+ln -sf "$HOME/my-dotfiles/xfce-panel/gtk.css" "$HOME/.config/gtk-3.0/gtk.css"
 
 # Set zsh as the default shell
 if [ "$SHELL" != "$(which zsh)" ]; then

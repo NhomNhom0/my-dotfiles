@@ -30,8 +30,9 @@ bindkey '^D' backward-kill-word
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
+alias clear="/usr/bin/clear"
 alias cls='clear'
-alias sp='spotify_player'
+alias sp="tmux kill-session -t spotify_player 2>/dev/null; tmux new-session -d -s spotify_player 'spotify_player'"
 
 # Environment variables
 export CUDA_HOME=/usr/local/cuda-12.6
@@ -57,7 +58,7 @@ unset __conda_setup
 if [ -f "$HOME/miniforge3/etc/profile.d/mamba.sh" ]; then
     . "$HOME/miniforge3/etc/profile.d/mamba.sh"
     mamba activate base
-    
+
     # Fix terminal settings AFTER mamba activation
     export TERMINFO=/usr/share/terminfo
     if [ -n "$TMUX" ]; then
@@ -67,6 +68,8 @@ if [ -f "$HOME/miniforge3/etc/profile.d/mamba.sh" ]; then
     fi
 fi
 
+# Always set TERMINFO after any conda/mamba activation
+export TERMINFO=/usr/share/terminfo
 
 # History settings
 setopt HIST_IGNORE_DUPS
@@ -80,5 +83,7 @@ HISTFILESIZE=2000
 
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 
-# if [[ "$TERM" == "xterm-kitty" ]]; then
-#   ( sleep 0.2 && neofetch --backend kitty ) &
+# auto turn on spotify_player if not already running
+if [ -z "$TMUX" ] && ! tmux has-session -t spotify_player 2>/dev/null; then
+  tmux new-session -d -s spotify_player "spotify_player"
+fi
