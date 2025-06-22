@@ -27,7 +27,7 @@ check_command() {
 }
 
 # Check required binaries
-required_commands=("zsh" "git" "neofetch" "kitty" "btop" "spotify_player" "rofi")
+required_commands=("zsh" "git" "neofetch" "kitty" "btop" "rofi")
 
 echo "📋 Checking required packages..."
 for cmd in "${required_commands[@]}"; do
