@@ -35,6 +35,19 @@ for cmd in "${required_commands[@]}"; do
         exit 1
     fi
 done
+
+# Check for LightDM (service, not command)
+if [ ! -f "/usr/sbin/lightdm" ] && [ ! -f "/usr/bin/lightdm" ]; then
+    echo "❌ Please install lightdm!"
+    exit 1
+fi
+
+# Check for lightdm-gtk-greeter binary
+if [ ! -f "/usr/sbin/lightdm-gtk-greeter" ] && [ ! -f "/usr/bin/lightdm-gtk-greeter" ]; then
+    echo "❌ Please install lightdm-gtk-greeter!"
+    exit 1
+fi
+
 echo "📦 All required packages are installed"
 
 # Check if oh-my-zsh is installed
