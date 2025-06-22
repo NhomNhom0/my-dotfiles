@@ -1,7 +1,12 @@
-#XfcePanelWindow {
+#XfcePanelWindow,
+#XfcePanelWindow.maximized {
   border-radius: 10px;
   background-clip: padding-box;
-  background-color: rgba(30, 32, 48); /* Adjust as needed */
+  background-color: rgba(30, 32, 48, 0.8); /* Add alpha for transparency */
+}
+
+#XfcePanelWindowWrapper {
+  background-color: rgba(30, 32, 48, 0.8); /* Add alpha for transparency */
 }
 
 #xfce4-notification-plugin image{
@@ -27,7 +32,7 @@
 #pager-11 #xfce-panel-toggle-button:hover,
 #pager-11 #xfce-panel-toggle-button:checked {
     border-radius: 6px;
-	background-color: rgb(74, 82, 138);
+	  background-color: rgba(74, 82, 138, 0.8);
 	
 }
 
@@ -62,7 +67,7 @@
 #xfce4-clipman-plugin:hover,
 #showdesktop-button:hover,
 #indicator-button:hover {
-  background-color: rgb(74, 82, 138); /* Maintain this background color on hover/checked */
+  background-color: rgba(74, 82, 138, 0.8); /* Maintain this background color on hover/checked */
   margin: 2px 6px;
   padding: 6px 12px;
   border-radius: 6px;
@@ -78,7 +83,7 @@
 #xfce4-clipman-plugin:checked,
 #showdesktop-button:checked,
 #indicator-button:checked {
-  background-color: rgb(74, 82, 138); /* Maintain this background color on hover/checked */
+  background-color: rgba(74, 82, 138, 0.8); /* Maintain this background color on hover/checked */
   margin: 2px 6px;
   padding: 6px 12px;
   border-radius: 6px;
@@ -95,6 +100,6 @@
 
 #tasklist-13 .toggle:checked {
 	border-radius: 6px;
-	background-color: rgb(74, 82, 138);
+	background-color: rgba(74, 82, 138, 0.8);
 	border-bottom: 2.5px solid #F49BAB;
 }

@@ -96,21 +96,129 @@ done
 
 # 1. xfce4-panel.xml
 mkdir -p "$HOME/.config/xfce4/xfconf/xfce-perchannel-xml"
-ln -sf "$HOME/my-dotfiles/xfce-panel/xfce4-panel.xml" "$HOME/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-panel.xml"
+xfce_panel_target="$HOME/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-panel.xml"
+if [ -e "$xfce_panel_target" ] && [ ! -L "$xfce_panel_target" ]; then
+    read -p "File $xfce_panel_target exists and is not a symlink. Overwrite with symlink? [y/N] " answer
+    if [[ "$answer" =~ ^[Yy]$ ]]; then
+        rm -f "$xfce_panel_target"
+        ln -sf "$HOME/my-dotfiles/xfce-panel/xfce4-panel.xml" "$xfce_panel_target"
+        echo "Symlinked $xfce_panel_target."
+    else
+        echo "Skipped $xfce_panel_target."
+    fi
+elif [ ! -L "$xfce_panel_target" ]; then
+    ln -sf "$HOME/my-dotfiles/xfce-panel/xfce4-panel.xml" "$xfce_panel_target"
+fi
 
 # 2. xfce4 panel directory
 mkdir -p "$HOME/.config/xfce4/panel"
-ln -sf $HOME/my-dotfiles/xfce-panel/panel/* $HOME/.config/xfce4/panel/
+for file in $HOME/my-dotfiles/xfce-panel/panel/*; do
+    target="$HOME/.config/xfce4/panel/$(basename "$file")"
+    if [ -e "$target" ] && [ ! -L "$target" ]; then
+        read -p "File $target exists and is not a symlink. Overwrite with symlink? [y/N] " answer
+        if [[ "$answer" =~ ^[Yy]$ ]]; then
+            rm -f "$target"
+            ln -sf "$file" "$target"
+            echo "Symlinked $target."
+        else
+            echo "Skipped $target."
+        fi
+    elif [ ! -L "$target" ]; then
+        ln -sf "$file" "$target"
+    fi
+done
 
 # 3. gtk-3.0 gtk.css
 mkdir -p "$HOME/.config/gtk-3.0"
-ln -sf "$HOME/my-dotfiles/xfce-panel/gtk.css" "$HOME/.config/gtk-3.0/gtk.css"
+gtk_css_target="$HOME/.config/gtk-3.0/gtk.css"
+if [ -e "$gtk_css_target" ] && [ ! -L "$gtk_css_target" ]; then
+    read -p "File $gtk_css_target exists and is not a symlink. Overwrite with symlink? [y/N] " answer
+    if [[ "$answer" =~ ^[Yy]$ ]]; then
+        rm -f "$gtk_css_target"
+        ln -sf "$HOME/my-dotfiles/xfce-panel/gtk.css" "$gtk_css_target"
+        echo "Symlinked $gtk_css_target."
+    else
+        echo "Skipped $gtk_css_target."
+    fi
+elif [ ! -L "$gtk_css_target" ]; then
+    ln -sf "$HOME/my-dotfiles/xfce-panel/gtk.css" "$gtk_css_target"
+fi
 
 # 4. xfce4-keyboard-shortcuts.xml
-ln -sf "$HOME/my-dotfiles/keyboard-shortcut/xfce4-keyboard-shortcuts.xml" "$HOME/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml"
+keyboard_shortcuts_target="$HOME/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml"
+if [ -e "$keyboard_shortcuts_target" ] && [ ! -L "$keyboard_shortcuts_target" ]; then
+    read -p "File $keyboard_shortcuts_target exists and is not a symlink. Overwrite with symlink? [y/N] " answer
+    if [[ "$answer" =~ ^[Yy]$ ]]; then
+        rm -f "$keyboard_shortcuts_target"
+        ln -sf "$HOME/my-dotfiles/keyboard-shortcut/xfce4-keyboard-shortcuts.xml" "$keyboard_shortcuts_target"
+        echo "Symlinked $keyboard_shortcuts_target."
+    else
+        echo "Skipped $keyboard_shortcuts_target."
+    fi
+elif [ ! -L "$keyboard_shortcuts_target" ]; then
+    ln -sf "$HOME/my-dotfiles/keyboard-shortcut/xfce4-keyboard-shortcuts.xml" "$keyboard_shortcuts_target"
+fi
 
 # 5. xfwm4.xml
-ln -sf "$HOME/my-dotfiles/keyboard-shortcut/xfwm4.xml" "$HOME/.config/xfce4/xfconf/xfce-perchannel-xml/xfwm4.xml"
+xfwm4_target="$HOME/.config/xfce4/xfconf/xfce-perchannel-xml/xfwm4.xml"
+if [ -e "$xfwm4_target" ] && [ ! -L "$xfwm4_target" ]; then
+    read -p "File $xfwm4_target exists and is not a symlink. Overwrite with symlink? [y/N] " answer
+    if [[ "$answer" =~ ^[Yy]$ ]]; then
+        rm -f "$xfwm4_target"
+        ln -sf "$HOME/my-dotfiles/keyboard-shortcut/xfwm4.xml" "$xfwm4_target"
+        echo "Symlinked $xfwm4_target."
+    else
+        echo "Skipped $xfwm4_target."
+    fi
+elif [ ! -L "$xfwm4_target" ]; then
+    ln -sf "$HOME/my-dotfiles/keyboard-shortcut/xfwm4.xml" "$xfwm4_target"
+fi
+
+# Symlink LightDM main config
+if [ ! -L "/etc/lightdm/lightdm.conf" ]; then
+    sudo ln -sf "$HOME/my-dotfiles/lockscreen/lightdm.conf" /etc/lightdm/lightdm.conf
+fi
+
+# Symlink LightDM configuration
+dest_dir="/usr/share/lightdm/lightdm.conf.d/"
+sudo mkdir -p "$dest_dir"
+for file in $HOME/my-dotfiles/lockscreen/lightdm.conf.d/*; do
+    target="$dest_dir$(basename "$file")"
+    if [ ! -L "$target" ]; then
+        sudo ln -sf "$file" "$target"
+    fi
+done
+
+# Symlink backgrounds
+dest_bg="/usr/share/backgrounds/"
+sudo mkdir -p "$dest_bg"
+for file in $HOME/my-dotfiles/lockscreen/background/*; do
+    target="$dest_bg$(basename "$file")"
+    if [ ! -L "$target" ]; then
+        sudo ln -sf "$file" "$target"
+    fi
+done
+
+# Symlink LightDM GTK Greeter config
+if [ ! -L "/etc/lightdm/lightdm-gtk-greeter.conf" ]; then
+    sudo ln -sf "$HOME/my-dotfiles/lockscreen/lightdm-gtk-greeter.conf" /etc/lightdm/lightdm-gtk-greeter.conf
+fi
+# sudo chmod 644 /etc/lightdm/lightdm-gtk-greeter.conf
+
+# Symlink all .sh files in rofi and its subfolders to /usr/local/bin and make them executable
+find "$HOME/my-dotfiles/" -type f -name "*.sh" | while read -r script; do
+    script_name=$(basename "$script" .sh)
+    target="/usr/local/bin/$script_name"
+    if [ ! -L "$target" ]; then
+        sudo ln -sf "$script" "$target"
+    fi
+    sudo chmod +x "$script"
+done
+
+# Ensure permissions for LightDM and other services to access backgrounds
+chmod o+rx "$HOME"
+chmod o+rx "$HOME/my-dotfiles"
+chmod -R o+r "$HOME/my-dotfiles/lockscreen/background"
 
 # Set zsh as the default shell
 if [ "$SHELL" != "$(which zsh)" ]; then
