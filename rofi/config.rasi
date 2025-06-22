@@ -1,0 +1,48 @@
+@import "./themes/catppuccin-macchiato"
+@theme "./themes/catppuccin-default"
+
+configuration {
+	/* — Display name change — */
+    modi: "drun,windowcd,window,filebrowser,keys";
+    mode: "drun";
+    display-drun: "Applications";
+    display-window: "Windows";
+    display-windowcd: "Current Windows";
+    display-filebrowser: "File";
+    display-keys: "Shortcut Keys";
+    drun-display-format: "{icon} {name}";
+    show-icons: true;
+	font: "Hack Nerd Font Regular 12";
+
+    /* — disable default Tab bindings — */
+    kb-element-next: "";
+    kb-element-prev: "";
+    kb-row-tab: "";
+    kb-row-select: "";
+    kb-row-down: "Down,Control+n";
+    kb-row-up: "Up,Control+p";
+    /* — bind Tab to mode switching — */
+    kb-mode-next: "Tab";
+	kb-mode-previous: "Shift+Tab,ISO_Left_Tab";
+}
+
+window {
+    /* round the entire window */
+    border-radius: 12px;
+}
+
+mainbox {
+    /* round the container that holds list + prompt */
+    border-radius: 6px;
+}
+
+textbox {
+    /* round each entry background (optional) */
+    border-radius: 6px;
+}
+
+listview {
+    /* round the list area */
+    border-radius: 0px;
+}
+
