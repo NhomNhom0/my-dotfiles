@@ -27,7 +27,7 @@ check_command() {
 }
 
 # Check required binaries
-required_commands=("zsh" "git" "neofetch" "kitty" "btop" "spotify_player")
+required_commands=("zsh" "git" "neofetch" "kitty" "btop" "spotify_player" "rofi")
 
 echo "📋 Checking required packages..."
 for cmd in "${required_commands[@]}"; do
@@ -75,7 +75,7 @@ sudo ln -sf $HOME/my-dotfiles/fonts/* /usr/share/fonts/truetype
 sudo ln -sf $HOME/my-dotfiles/themes/* /usr/share/themes/
 
 # Handle .config directories and symlinks
-for config_dir in "neofetch" "kitty" "btop" "spotify-player"; do
+for config_dir in "neofetch" "kitty" "btop" "spotify-player" "rofi"; do
     config_path="$HOME/.config/$config_dir"
     dotfiles_path="$HOME/my-dotfiles/$config_dir"
 
