@@ -106,6 +106,12 @@ ln -sf $HOME/my-dotfiles/xfce-panel/panel/* $HOME/.config/xfce4/panel/
 mkdir -p "$HOME/.config/gtk-3.0"
 ln -sf "$HOME/my-dotfiles/xfce-panel/gtk.css" "$HOME/.config/gtk-3.0/gtk.css"
 
+# 4. xfce4-keyboard-shortcuts.xml
+ln -sf "$HOME/my-dotfiles/keyboard-shortcut/xfce4-keyboard-shortcuts.xml" "$HOME/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml"
+
+# 5. xfwm4.xml
+ln -sf "$HOME/my-dotfiles/keyboard-shortcut/xfwm4.xml" "$HOME/.config/xfce4/xfconf/xfce-perchannel-xml/xfwm4.xml"
+
 # Set zsh as the default shell
 if [ "$SHELL" != "$(which zsh)" ]; then
     echo "To set zsh as the default shell, run the following command:"
