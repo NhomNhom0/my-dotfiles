@@ -26,9 +26,15 @@ check_command() {
     fi
 }
 
+
 # Check required binaries
 required_commands=("zsh" "git" "neofetch" "kitty" "btop" "rofi")
 
+# Check for fonts-noto-color-emoji (emoji font, not a binary)
+if ! fc-list | grep -qi "NotoColorEmoji"; then
+    echo "❌ Please install fonts-noto-color-emoji (Noto Color Emoji font)!"
+    exit 1
+fi
 echo "📋 Checking required packages..."
 for cmd in "${required_commands[@]}"; do
     if ! check_command "$cmd"; then
@@ -86,6 +92,11 @@ ln -sf $HOME/my-dotfiles/zsh/.zprofile $HOME/.zprofile
 ln -sf $HOME/my-dotfiles/zsh/.zshrc $HOME/.zshrc
 sudo ln -sf $HOME/my-dotfiles/fonts/* /usr/share/fonts/truetype
 sudo ln -sf $HOME/my-dotfiles/themes/* /usr/share/themes/
+
+# Symlink icons folder to global icons directory for icon themes
+if [ -d "$HOME/my-dotfiles/icons" ]; then
+    sudo ln -sf $HOME/my-dotfiles/icons/* /usr/share/icons/
+fi
 
 # Handle .config directories and symlinks
 for config_dir in "neofetch" "kitty" "btop" "spotify-player" "rofi"; do
@@ -218,6 +229,7 @@ if [ ! -L "/etc/lightdm/lightdm-gtk-greeter.conf" ]; then
 fi
 # sudo chmod 644 /etc/lightdm/lightdm-gtk-greeter.conf
 
+
 # Symlink all .sh files in rofi and its subfolders to /usr/local/bin and make them executable
 find "$HOME/my-dotfiles/" -type f -name "*.sh" | while read -r script; do
     script_name=$(basename "$script" .sh)
@@ -227,6 +239,18 @@ find "$HOME/my-dotfiles/" -type f -name "*.sh" | while read -r script; do
     fi
     sudo chmod +x "$script"
 done
+
+
+# Symlink lightdm-xset-disable.sh specifically to /usr/local/bin
+if [ -f "$HOME/my-dotfiles/bin/lightdm-xset-disable.sh" ]; then
+    sudo ln -sf "$HOME/my-dotfiles/bin/lightdm-xset-disable.sh" /usr/local/bin/lightdm-xset-disable.sh
+    sudo chmod +x /usr/local/bin/lightdm-xset-disable.sh
+fi
+
+# Symlink fontconfig local.conf to /etc/fonts/local.conf
+if [ -f "$HOME/my-dotfiles/font_config/local.conf" ]; then
+    sudo ln -sf "$HOME/my-dotfiles/font_config/local.conf" /etc/fonts/local.conf
+fi
 
 # Ensure permissions for LightDM and other services to access backgrounds
 chmod o+rx "$HOME"

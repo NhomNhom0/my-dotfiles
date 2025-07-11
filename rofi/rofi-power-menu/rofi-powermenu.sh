@@ -6,7 +6,7 @@ CHOSEN=$(printf "  Lock\n󰤄  Suspend\n  Reboot\n  Power Off\n󰗽  Lo
 
 case "$CHOSEN" in
     "  Lock") light-locker-command --lock ;;  # Replace with your lock script if needed
-    "󰤄  Suspend") systemctl suspend-then-hibernate ;;
+    "󰤄  Suspend") systemctl suspend ;;
     "  Reboot") systemctl reboot ;;
     "  Power Off") systemctl poweroff ;;
 	"󰗽  Log Out") pkill -KILL -u "$USER" ;;
