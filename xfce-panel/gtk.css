@@ -103,3 +103,17 @@
 	background-color: rgba(74, 82, 138, 1);
 	border-bottom: 2.5px solid #F49BAB;
 }
+
+/* Override Background for tasklist-13 */
+#tasklist-17 .toggle {
+	background-color: transparent;
+	border-radius: 6px;
+	padding:0;
+	margin:0;
+}
+
+#tasklist-17 .toggle:checked {
+	border-radius: 6px;
+	background-color: rgba(74, 82, 138, 1);
+	border-bottom: 2.5px solid #F49BAB;
+}
