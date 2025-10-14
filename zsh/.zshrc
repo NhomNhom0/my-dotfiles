@@ -83,10 +83,6 @@ HISTFILESIZE=2000
 
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 
-# auto turn on spotify_player if not already running
-if [ -z "$TMUX" ] && ! tmux has-session -t spotify_player 2>/dev/null; then
-  tmux new-session -d -s spotify_player "spotify_player"
-fi
 # # >>> conda initialize >>>
 # # !! Contents within this block are managed by 'conda init' !!
 # __conda_setup="$('/home/nhomnhom0/miniforge3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
