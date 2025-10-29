@@ -40,6 +40,7 @@ export PATH=$CUDA_HOME/bin:$PATH
 export LD_LIBRARY_PATH=$CUDA_HOME/lib64  # Remove any references to cuda-12.8
 export CUDA_DEVICE_ORDER="PCI_BUS_ID"
 export TORCH_CUDA_ARCH_LIST="7.5"
+export VIMINIT='source $XDG_CONFIG_HOME/vim/.vimrc'
 
 # Conda initialize
 __conda_setup="$('$HOME/miniforge3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"

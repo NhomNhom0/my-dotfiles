@@ -5,25 +5,27 @@
   <property name="panels" type="array">
     <value type="int" value="1"/>
     <value type="int" value="2"/>
-    <property name="dark-mode" type="bool" value="true"/>
+    <value type="int" value="3"/>
+    <property name="dark-mode" type="bool" value="false"/>
     <property name="panel-1" type="empty">
       <property name="position" type="string" value="p=9;x=679;y=20"/>
       <property name="length" type="double" value="100"/>
       <property name="position-locked" type="bool" value="true"/>
       <property name="icon-size" type="uint" value="16"/>
-      <property name="size" type="uint" value="39"/>
+      <property name="size" type="uint" value="45"/>
       <property name="plugin-ids" type="array">
         <value type="int" value="1"/>
         <value type="int" value="2"/>
         <value type="int" value="11"/>
         <value type="int" value="22"/>
         <value type="int" value="6"/>
+        <value type="int" value="7"/>
         <value type="int" value="8"/>
         <value type="int" value="9"/>
         <value type="int" value="10"/>
         <value type="int" value="12"/>
       </property>
-      <property name="background-style" type="uint" value="1"/>
+      <property name="background-style" type="uint" value="0"/>
       <property name="disable-struts" type="bool" value="false"/>
       <property name="length-adjust" type="bool" value="true"/>
       <property name="enter-opacity" type="uint" value="100"/>
@@ -37,11 +39,13 @@
         <value type="double" value="1"/>
       </property>
       <property name="background-image" type="string" value="file:///home/nhomnhom-deb/Pictures/debian-black-4k.png"/>
+      <property name="span-monitors" type="bool" value="false"/>
+      <property name="output-name" type="string" value="Primary"/>
     </property>
     <property name="panel-2" type="empty">
       <property name="position" type="string" value="p=10;x=686;y=747"/>
-      <property name="size" type="uint" value="40"/>
-      <property name="length" type="double" value="32.430453879941432"/>
+      <property name="size" type="uint" value="50"/>
+      <property name="length" type="double" value="1"/>
       <property name="plugin-ids" type="array">
         <value type="int" value="3"/>
         <value type="int" value="4"/>
@@ -49,147 +53,211 @@
         <value type="int" value="13"/>
         <value type="int" value="14"/>
       </property>
-      <property name="background-style" type="uint" value="2"/>
+      <property name="background-style" type="uint" value="0"/>
       <property name="background-image" type="string" value="file:///home/nhomnhom-deb/Pictures/debian-black-4k.png"/>
       <property name="autohide-behavior" type="uint" value="1"/>
       <property name="position-locked" type="bool" value="true"/>
-      <property name="length-adjust" type="bool" value="false"/>
+      <property name="length-adjust" type="bool" value="true"/>
+      <property name="disable-struts" type="bool" value="true"/>
+      <property name="span-monitors" type="bool" value="false"/>
+      <property name="output-name" type="string" value="Primary"/>
+      <property name="icon-size" type="uint" value="0"/>
+    </property>
+    <property name="panel-3" type="empty">
+      <property name="position" type="string" value="p=12;x=986;y=1047"/>
+      <property name="size" type="uint" value="50"/>
+      <property name="output-name" type="string" value="eDP-1"/>
+      <property name="disable-struts" type="bool" value="true"/>
+      <property name="position-locked" type="bool" value="true"/>
+      <property name="autohide-behavior" type="uint" value="1"/>
+      <property name="length" type="double" value="1"/>
+      <property name="plugin-ids" type="array">
+        <value type="int" value="19"/>
+        <value type="int" value="17"/>
+        <value type="int" value="18"/>
+      </property>
     </property>
   </property>
   <property name="plugins" type="empty">
     <property name="plugin-6" type="string" value="systray">
       <property name="square-icons" type="bool" value="true"/>
       <property name="known-legacy-items" type="array">
-        <value type="string" value="wi-fi network connection “hai” active: hai (87%)"/>
-        <value type="string" value="wi-fi network connection “hai” active: hai (83%)"/>
-        <value type="string" value="wi-fi network connection “hai” active: hai (86%)"/>
-        <value type="string" value="wi-fi network connection “hai” active: hai (88%)"/>
-        <value type="string" value="wi-fi network connection “hai” active: hai (90%)"/>
-        <value type="string" value="xfce4-power-manager"/>
-        <value type="string" value="wi-fi network connection “hai” active: hai (84%)"/>
-        <value type="string" value="wi-fi network connection “hai” active: hai (85%)"/>
-        <value type="string" value="wi-fi network connection “hai” active: hai (82%)"/>
-        <value type="string" value="wi-fi network connection “hai” active: hai (92%)"/>
-        <value type="string" value="wi-fi network connection “hai” active: hai (93%)"/>
-        <value type="string" value="wi-fi network connection “hai” active: hai (96%)"/>
-        <value type="string" value="wi-fi network connection “hai” active: hai (95%)"/>
-        <value type="string" value="wi-fi network connection “hai 5ghz” active: hai 5ghz (81%)"/>
-        <value type="string" value="wi-fi network connection “hai 5ghz” active: hai 5ghz (95%)"/>
-        <value type="string" value="wi-fi network connection “hai 5ghz” active: hai 5ghz (94%)"/>
-        <value type="string" value="wi-fi network connection “hai 5ghz” active: hai 5ghz (96%)"/>
-        <value type="string" value="wi-fi network connection “hai 5ghz” active: hai 5ghz (97%)"/>
-        <value type="string" value="wi-fi network connection “hai 5ghz” active: hai 5ghz (93%)"/>
-        <value type="string" value="wi-fi network connection “hai 5ghz” active: hai 5ghz (82%)"/>
-        <value type="string" value="wi-fi network connection “hai 5ghz” active: hai 5ghz (77%)"/>
-        <value type="string" value="wi-fi network connection “hai 5ghz” active: hai 5ghz (75%)"/>
-        <value type="string" value="wi-fi network connection “hai 5ghz” active: hai 5ghz (85%)"/>
-        <value type="string" value="wi-fi network connection “hai 5ghz” active: hai 5ghz (80%)"/>
-        <value type="string" value="wi-fi network connection “hai 5ghz” active: hai 5ghz (65%)"/>
-        <value type="string" value="gpick"/>
-        <value type="string" value="wi-fi network connection “hai 5ghz” active: hai 5ghz (92%)"/>
-        <value type="string" value="wi-fi network connection “hai 5ghz” active: hai 5ghz (91%)"/>
-        <value type="string" value="wi-fi network connection “hai 5ghz” active: hai 5ghz (73%)"/>
-        <value type="string" value="wi-fi network connection “hai 5ghz” active: hai 5ghz (72%)"/>
-        <value type="string" value="wi-fi network connection “hai 5ghz” active: hai 5ghz (76%)"/>
-        <value type="string" value="wi-fi network connection “hai 5ghz” active: hai 5ghz (88%)"/>
-        <value type="string" value="wi-fi network connection “hai 5ghz” active: hai 5ghz (87%)"/>
-        <value type="string" value="wi-fi network connection “hai 5ghz” active: hai 5ghz (84%)"/>
-        <value type="string" value="wi-fi network connection “hai 5ghz” active: hai 5ghz (90%)"/>
-        <value type="string" value="wi-fi network connection “hai 5ghz” active: hai 5ghz (83%)"/>
+        <value type="string" value="wi-fi network connection “hai 5ghz” active: hai 5ghz (79%)"/>
+        <value type="string" value="ethernet network connection “wired connection 1” active"/>
+        <value type="string" value="wi-fi network connection “creatix” active: creatix (88%)"/>
         <value type="string" value="wi-fi network connection “hai 5ghz” active: hai 5ghz (86%)"/>
-        <value type="string" value="blueman-tray"/>
-        <value type="string" value="wi-fi network connection “hai 5ghz” active: hai 5ghz (89%)"/>
-        <value type="string" value="wi-fi network connection “mai dung” active: mai dung (84%)"/>
-        <value type="string" value="wi-fi network connection “mai dung” active: mai dung (81%)"/>
-        <value type="string" value="wi-fi network connection “mai dung” active: mai dung (87%)"/>
-        <value type="string" value="wi-fi network connection “mai dung” active: mai dung (90%)"/>
-        <value type="string" value="wi-fi network connection “mai dung” active: mai dung (89%)"/>
-        <value type="string" value="wi-fi network connection “mai dung” active: mai dung (94%)"/>
-        <value type="string" value="wi-fi network connection “mai dung” active: mai dung (69%)"/>
-        <value type="string" value="wi-fi network connection “mai dung” active: mai dung (79%)"/>
-        <value type="string" value="wi-fi network connection “mai dung” active: mai dung (78%)"/>
-        <value type="string" value="wi-fi network connection “mai dung” active: mai dung (70%)"/>
-        <value type="string" value="wi-fi network connection “mai dung” active: mai dung (77%)"/>
-        <value type="string" value="networkmanager applet"/>
-        <value type="string" value="wi-fi network connection “mai dung” active: mai dung (91%)"/>
-        <value type="string" value="wi-fi network connection “mai dung” active: mai dung (80%)"/>
-        <value type="string" value="ibus panel"/>
-        <value type="string" value="ibus-ui-gtk3"/>
-        <value type="string" value="wi-fi network connection “mai dung” active: mai dung (88%)"/>
-        <value type="string" value="clipman"/>
-        <value type="string" value="wi-fi network connection “mai dung” active: mai dung (92%)"/>
-        <value type="string" value="wi-fi network connection “mai dung” active: mai dung (93%)"/>
+        <value type="string" value="wi-fi network connection “creatix” active: creatix (87%)"/>
+        <value type="string" value="anydesk"/>
+        <value type="string" value="wi-fi network connection “hai 5ghz” active: hai 5ghz (100%)"/>
+        <value type="string" value="wi-fi network connection “creatix” active: creatix (75%)"/>
+        <value type="string" value="gpick"/>
+        <value type="string" value="wi-fi network connection “creatix” active: creatix (83%)"/>
+        <value type="string" value="wi-fi network connection “creatix” active: creatix (86%)"/>
+        <value type="string" value="wi-fi network connection “creatix” active: creatix (84%)"/>
+        <value type="string" value="wi-fi network connection “creatix” active: creatix (74%)"/>
+        <value type="string" value="fcitx5 tray window"/>
+        <value type="string" value="wi-fi network connection “creatix” active: creatix (70%)"/>
+        <value type="string" value="wi-fi network connection “creatix” active: creatix (73%)"/>
+        <value type="string" value="wi-fi network connection “creatix” active: creatix (99%)"/>
+        <value type="string" value="wi-fi network connection “creatix” active: creatix (100%)"/>
+        <value type="string" value="wi-fi network connection “hai 5ghz” active: hai 5ghz (77%)"/>
+        <value type="string" value="wi-fi network connection “hai 5ghz” active: hai 5ghz (80%)"/>
+        <value type="string" value="wi-fi network connection “creatix” active: creatix (80%)"/>
+        <value type="string" value="wi-fi network connection “creatix” active: creatix (77%)"/>
+        <value type="string" value="wi-fi network connection “creatix” active: creatix (79%)"/>
+        <value type="string" value="wi-fi network connection “creatix” active: creatix (78%)"/>
+        <value type="string" value="wi-fi network connection “creatix” active: creatix (67%)"/>
+        <value type="string" value="wi-fi network connection “creatix” active: creatix (68%)"/>
+        <value type="string" value="wi-fi network connection “creatix” active: creatix (90%)"/>
+        <value type="string" value="wi-fi network connection “giang” active: giang (67%)"/>
+        <value type="string" value="wi-fi network connection “hai 5ghz” active: hai 5ghz (91%)"/>
+        <value type="string" value="wi-fi network connection “hai 5ghz” active: hai 5ghz (84%)"/>
+        <value type="string" value="wi-fi network connection “giang” active: giang (72%)"/>
+        <value type="string" value="wi-fi network connection “giang” active: giang (71%)"/>
+        <value type="string" value="redshift-gtk"/>
+        <value type="string" value="wi-fi network connection “giang” active: giang (68%)"/>
+        <value type="string" value="wi-fi network connection “giang” active: giang (75%)"/>
+        <value type="string" value="wi-fi network connection “giang” active: giang (76%)"/>
+        <value type="string" value="wi-fi network connection “giang” active: giang (78%)"/>
+        <value type="string" value="wi-fi network connection “giang” active: giang (79%)"/>
+        <value type="string" value="wi-fi network connection “giang” active: giang (77%)"/>
+        <value type="string" value="wi-fi network connection “hai 5ghz” active: hai 5ghz (78%)"/>
+        <value type="string" value="wi-fi network connection “hai 5ghz” active: hai 5ghz (73%)"/>
+        <value type="string" value="wi-fi network connection “hai 5ghz” active: hai 5ghz (74%)"/>
+        <value type="string" value="wi-fi network connection “hai 5ghz” active: hai 5ghz (99%)"/>
+        <value type="string" value="wi-fi network connection “hai 5ghz” active: hai 5ghz (65%)"/>
+        <value type="string" value="fluxfce_gui.py"/>
+        <value type="string" value="wi-fi network connection “giang” active: giang (69%)"/>
+        <value type="string" value="wi-fi network connection “giang” active: giang (70%)"/>
+        <value type="string" value="blueman"/>
         <value type="string" value="no network connection"/>
+        <value type="string" value="wi-fi network connection “giang” active: giang (100%)"/>
+        <value type="string" value="wi-fi network connection “hai 5ghz” active: hai 5ghz (70%)"/>
+        <value type="string" value="networkmanager applet"/>
+        <value type="string" value="wi-fi network connection “hai 5ghz” active: hai 5ghz (81%)"/>
+        <value type="string" value="wi-fi network connection “hai 5ghz” active: hai 5ghz (90%)"/>
+        <value type="string" value="clipman"/>
+        <value type="string" value="xfce4-power-manager"/>
+        <value type="string" value="ibus panel"/>
+        <value type="string" value="wi-fi network connection “hai 5ghz” active: hai 5ghz (76%)"/>
+        <value type="string" value="ibus-ui-gtk3"/>
+        <value type="string" value="wi-fi network connection “hai 5ghz” active: hai 5ghz (49%)"/>
+        <value type="string" value="wi-fi network connection “hai 5ghz” active"/>
+        <value type="string" value="wi-fi network connection “hai 5ghz” active: hai 5ghz (95%)"/>
+        <value type="string" value="wi-fi network connection “hai 5ghz” active: hai 5ghz (83%)"/>
       </property>
       <property name="known-items" type="array">
-        <value type="string" value="TelegramDesktop"/>
+        <value type="string" value="MellowPlayer3"/>
+        <value type="string" value="kluSWMVK65"/>
+        <value type="string" value="rG-GxfmliC"/>
+        <value type="string" value="fOPu8PYN9R"/>
+        <value type="string" value="XsGQYEuh9S"/>
+        <value type="string" value="wU3xX1PMHm"/>
+        <value type="string" value="Fcitx"/>
+        <value type="string" value="Om-UCI9hGw"/>
+        <value type="string" value="tW5voKV6ld"/>
+        <value type="string" value="QwJ6TRtTMk"/>
+        <value type="string" value="chrome_status_icon_1"/>
         <value type="string" value="blueman"/>
+        <value type="string" value="TeamViewer"/>
+        <value type="string" value="redshift"/>
+        <value type="string" value="zero-trust-client"/>
+        <value type="string" value="spotify-client"/>
+        <value type="string" value="TelegramDesktop"/>
       </property>
       <property name="icon-size" type="int" value="0"/>
       <property name="single-row" type="bool" value="true"/>
       <property name="hide-new-items" type="bool" value="true"/>
       <property name="menu-is-primary" type="bool" value="true"/>
       <property name="hidden-items" type="array">
+        <value type="string" value="fOPu8PYN9R"/>
+        <value type="string" value="XsGQYEuh9S"/>
+        <value type="string" value="redshift"/>
+        <value type="string" value="spotify-client"/>
         <value type="string" value="blueman"/>
+        <value type="string" value="MellowPlayer3"/>
+        <value type="string" value="wU3xX1PMHm"/>
+        <value type="string" value="chrome_status_icon_1"/>
+        <value type="string" value="kluSWMVK65"/>
+        <value type="string" value="QwJ6TRtTMk"/>
+        <value type="string" value="tW5voKV6ld"/>
+        <value type="string" value="TelegramDesktop"/>
+        <value type="string" value="zero-trust-client"/>
+        <value type="string" value="Om-UCI9hGw"/>
+        <value type="string" value="rG-GxfmliC"/>
+        <value type="string" value="TeamViewer"/>
       </property>
       <property name="hidden-legacy-items" type="array">
-        <value type="string" value="wi-fi network connection “hai 5ghz” active: hai 5ghz (82%)"/>
-        <value type="string" value="wi-fi network connection “hai” active: hai (83%)"/>
-        <value type="string" value="wi-fi network connection “hai 5ghz” active: hai 5ghz (91%)"/>
-        <value type="string" value="wi-fi network connection “hai 5ghz” active: hai 5ghz (76%)"/>
-        <value type="string" value="wi-fi network connection “hai 5ghz” active: hai 5ghz (85%)"/>
-        <value type="string" value="wi-fi network connection “hai” active: hai (92%)"/>
-        <value type="string" value="wi-fi network connection “hai” active: hai (86%)"/>
-        <value type="string" value="wi-fi network connection “hai 5ghz” active: hai 5ghz (94%)"/>
-        <value type="string" value="wi-fi network connection “hai 5ghz” active: hai 5ghz (80%)"/>
-        <value type="string" value="wi-fi network connection “hai 5ghz” active: hai 5ghz (88%)"/>
-        <value type="string" value="wi-fi network connection “hai” active: hai (95%)"/>
-        <value type="string" value="wi-fi network connection “hai 5ghz” active: hai 5ghz (65%)"/>
-        <value type="string" value="wi-fi network connection “mai dung” active: mai dung (81%)"/>
-        <value type="string" value="wi-fi network connection “mai dung” active: mai dung (89%)"/>
-        <value type="string" value="wi-fi network connection “hai 5ghz” active: hai 5ghz (97%)"/>
-        <value type="string" value="wi-fi network connection “hai” active: hai (90%)"/>
-        <value type="string" value="wi-fi network connection “hai 5ghz” active: hai 5ghz (83%)"/>
-        <value type="string" value="clipman"/>
-        <value type="string" value="wi-fi network connection “mai dung” active: mai dung (90%)"/>
-        <value type="string" value="wi-fi network connection “mai dung” active: mai dung (84%)"/>
-        <value type="string" value="wi-fi network connection “hai 5ghz” active: hai 5ghz (77%)"/>
-        <value type="string" value="wi-fi network connection “hai 5ghz” active: hai 5ghz (92%)"/>
-        <value type="string" value="wi-fi network connection “hai” active: hai (93%)"/>
+        <value type="string" value="wi-fi network connection “hai 5ghz” active: hai 5ghz (78%)"/>
         <value type="string" value="wi-fi network connection “hai 5ghz” active: hai 5ghz (86%)"/>
-        <value type="string" value="wi-fi network connection “mai dung” active: mai dung (69%)"/>
-        <value type="string" value="wi-fi network connection “mai dung” active: mai dung (78%)"/>
-        <value type="string" value="wi-fi network connection “mai dung” active: mai dung (87%)"/>
-        <value type="string" value="wi-fi network connection “hai 5ghz” active: hai 5ghz (95%)"/>
+        <value type="string" value="wi-fi network connection “hai 5ghz” active: hai 5ghz (100%)"/>
+        <value type="string" value="clipman"/>
+        <value type="string" value="wi-fi network connection “hai 5ghz” active: hai 5ghz (83%)"/>
+        <value type="string" value="wi-fi network connection “hai 5ghz” active: hai 5ghz (91%)"/>
+        <value type="string" value="wi-fi network connection “hai 5ghz” active: hai 5ghz (80%)"/>
+        <value type="string" value="fluxfce_gui.py"/>
         <value type="string" value="gpick"/>
-        <value type="string" value="wi-fi network connection “hai 5ghz” active: hai 5ghz (81%)"/>
-        <value type="string" value="wi-fi network connection “hai” active: hai (96%)"/>
-        <value type="string" value="xfce4-power-manager"/>
-        <value type="string" value="wi-fi network connection “hai” active: hai (87%)"/>
-        <value type="string" value="wi-fi network connection “hai 5ghz” active: hai 5ghz (75%)"/>
-        <value type="string" value="wi-fi network connection “hai 5ghz” active: hai 5ghz (90%)"/>
-        <value type="string" value="wi-fi network connection “hai 5ghz” active: hai 5ghz (72%)"/>
-        <value type="string" value="wi-fi network connection “hai 5ghz” active: hai 5ghz (89%)"/>
-        <value type="string" value="blueman-tray"/>
+        <value type="string" value="wi-fi network connection “creatix” active: creatix (99%)"/>
+        <value type="string" value="wi-fi network connection “creatix” active: creatix (88%)"/>
+        <value type="string" value="wi-fi network connection “giang” active: giang (69%)"/>
+        <value type="string" value="wi-fi network connection “giang” active: giang (77%)"/>
+        <value type="string" value="wi-fi network connection “creatix” active: creatix (77%)"/>
+        <value type="string" value="wi-fi network connection “creatix” active: creatix (74%)"/>
+        <value type="string" value="wi-fi network connection “creatix” active: creatix (90%)"/>
+        <value type="string" value="anydesk"/>
+        <value type="string" value="wi-fi network connection “giang” active: giang (71%)"/>
+        <value type="string" value="networkmanager applet"/>
+        <value type="string" value="wi-fi network connection “hai 5ghz” active: hai 5ghz (79%)"/>
+        <value type="string" value="wi-fi network connection “hai 5ghz” active: hai 5ghz (95%)"/>
+        <value type="string" value="wi-fi network connection “hai 5ghz” active: hai 5ghz (76%)"/>
+        <value type="string" value="wi-fi network connection “hai 5ghz” active: hai 5ghz (49%)"/>
         <value type="string" value="wi-fi network connection “hai 5ghz” active: hai 5ghz (84%)"/>
-        <value type="string" value="wi-fi network connection “hai” active: hai (82%)"/>
-        <value type="string" value="wi-fi network connection “hai 5ghz” active: hai 5ghz (93%)"/>
-        <value type="string" value="wi-fi network connection “hai” active: hai (85%)"/>
-        <value type="string" value="wi-fi network connection “mai dung” active: mai dung (79%)"/>
-        <value type="string" value="wi-fi network connection “hai” active: hai (84%)"/>
-        <value type="string" value="wi-fi network connection “mai dung” active: mai dung (94%)"/>
+        <value type="string" value="wi-fi network connection “hai 5ghz” active: hai 5ghz (65%)"/>
+        <value type="string" value="ethernet network connection “wired connection 1” active"/>
         <value type="string" value="wi-fi network connection “hai 5ghz” active: hai 5ghz (73%)"/>
-        <value type="string" value="wi-fi network connection “hai 5ghz” active: hai 5ghz (96%)"/>
-        <value type="string" value="wi-fi network connection “hai 5ghz” active: hai 5ghz (87%)"/>
-        <value type="string" value="wi-fi network connection “hai” active: hai (88%)"/>
+        <value type="string" value="wi-fi network connection “hai 5ghz” active: hai 5ghz (81%)"/>
+        <value type="string" value="wi-fi network connection “hai 5ghz” active"/>
+        <value type="string" value="wi-fi network connection “hai 5ghz” active: hai 5ghz (70%)"/>
+        <value type="string" value="wi-fi network connection “giang” active: giang (100%)"/>
+        <value type="string" value="wi-fi network connection “creatix” active: creatix (78%)"/>
+        <value type="string" value="wi-fi network connection “giang” active: giang (78%)"/>
+        <value type="string" value="xfce4-power-manager"/>
+        <value type="string" value="wi-fi network connection “creatix” active: creatix (67%)"/>
+        <value type="string" value="wi-fi network connection “creatix” active: creatix (75%)"/>
+        <value type="string" value="wi-fi network connection “giang” active: giang (67%)"/>
+        <value type="string" value="fcitx5 tray window"/>
+        <value type="string" value="wi-fi network connection “creatix” active: creatix (86%)"/>
+        <value type="string" value="wi-fi network connection “creatix” active: creatix (83%)"/>
+        <value type="string" value="wi-fi network connection “creatix” active: creatix (80%)"/>
+        <value type="string" value="wi-fi network connection “giang” active: giang (72%)"/>
+        <value type="string" value="wi-fi network connection “giang” active: giang (75%)"/>
+        <value type="string" value="wi-fi network connection “hai 5ghz” active: hai 5ghz (99%)"/>
+        <value type="string" value="blueman"/>
+        <value type="string" value="wi-fi network connection “hai 5ghz” active: hai 5ghz (77%)"/>
+        <value type="string" value="wi-fi network connection “creatix” active: creatix (100%)"/>
+        <value type="string" value="wi-fi network connection “hai 5ghz” active: hai 5ghz (74%)"/>
+        <value type="string" value="redshift-gtk"/>
+        <value type="string" value="no network connection"/>
+        <value type="string" value="wi-fi network connection “hai 5ghz” active: hai 5ghz (90%)"/>
+        <value type="string" value="wi-fi network connection “creatix” active: creatix (79%)"/>
+        <value type="string" value="wi-fi network connection “creatix” active: creatix (87%)"/>
+        <value type="string" value="wi-fi network connection “giang” active: giang (79%)"/>
+        <value type="string" value="wi-fi network connection “creatix” active: creatix (68%)"/>
+        <value type="string" value="wi-fi network connection “giang” active: giang (68%)"/>
+        <value type="string" value="wi-fi network connection “creatix” active: creatix (84%)"/>
+        <value type="string" value="wi-fi network connection “giang” active: giang (76%)"/>
+        <value type="string" value="wi-fi network connection “creatix” active: creatix (73%)"/>
+        <value type="string" value="wi-fi network connection “creatix” active: creatix (70%)"/>
+        <value type="string" value="wi-fi network connection “giang” active: giang (70%)"/>
       </property>
       <property name="symbolic-icons" type="bool" value="false"/>
     </property>
     <property name="plugin-8" type="string" value="pulseaudio">
       <property name="enable-keyboard-shortcuts" type="bool" value="true"/>
       <property name="show-notifications" type="bool" value="true"/>
-      <property name="mpris-players" type="string" value="firefox.instance_1_104;firefox.instance_1_167;firefox.instance_1_371;firefox.instance_1_52;firefox.instance_1_77;spotify"/>
+      <property name="mpris-players" type="string" value="chromium.instance250746;chromium.instance2900;chromium.instance401413;chromium.instance558691;chromium.instance6843;spotify"/>
       <property name="enable-wnck" type="bool" value="false"/>
+      <property name="blacklisted-players" type="string" value=""/>
     </property>
     <property name="plugin-9" type="string" value="power-manager-plugin"/>
     <property name="plugin-10" type="string" value="notification-plugin"/>
@@ -216,21 +284,13 @@
       <property name="tweaks" type="empty">
         <property name="popup-at-pointer" type="bool" value="false"/>
         <property name="skip-action-on-key-down" type="bool" value="false"/>
-        <property name="never-confirm-history-clear" type="bool" value="false"/>
+        <property name="never-confirm-history-clear" type="bool" value="true"/>
+        <property name="paste-on-activate" type="uint" value="0"/>
       </property>
     </property>
     <property name="plugin-22" type="string" value="separator">
       <property name="expand" type="bool" value="true"/>
       <property name="style" type="uint" value="0"/>
-    </property>
-    <property name="plugin-13" type="string" value="tasklist">
-      <property name="flat-buttons" type="bool" value="true"/>
-      <property name="sort-order" type="uint" value="0"/>
-      <property name="grouping" type="bool" value="true"/>
-      <property name="show-labels" type="bool" value="false"/>
-      <property name="show-handle" type="bool" value="false"/>
-      <property name="show-only-minimized" type="bool" value="false"/>
-      <property name="include-all-workspaces" type="bool" value="true"/>
     </property>
     <property name="plugin-3" type="string" value="separator">
       <property name="expand" type="bool" value="true"/>
@@ -254,5 +314,34 @@
       </property>
     </property>
     <property name="plugin-5" type="string" value="separator"/>
+    <property name="plugin-7" type="string" value="xfce4-clipman-plugin"/>
+    <property name="plugin-17" type="string" value="tasklist">
+      <property name="show-labels" type="bool" value="false"/>
+      <property name="sort-order" type="uint" value="0"/>
+      <property name="middle-click" type="uint" value="1"/>
+      <property name="show-wireframes" type="bool" value="false"/>
+      <property name="show-handle" type="bool" value="false"/>
+      <property name="grouping" type="bool" value="true"/>
+    </property>
+    <property name="plugin-18" type="string" value="separator">
+      <property name="style" type="uint" value="0"/>
+      <property name="expand" type="bool" value="true"/>
+    </property>
+    <property name="plugin-19" type="string" value="separator">
+      <property name="style" type="uint" value="0"/>
+      <property name="expand" type="bool" value="true"/>
+    </property>
+    <property name="plugin-13" type="string" value="tasklist">
+      <property name="show-labels" type="bool" value="false"/>
+      <property name="flat-buttons" type="bool" value="false"/>
+      <property name="show-handle" type="bool" value="false"/>
+      <property name="sort-order" type="uint" value="4"/>
+      <property name="middle-click" type="uint" value="1"/>
+      <property name="include-all-workspaces" type="bool" value="false"/>
+      <property name="grouping" type="bool" value="true"/>
+      <property name="switch-workspace-on-unminimize" type="bool" value="false"/>
+      <property name="show-only-minimized" type="bool" value="false"/>
+      <property name="include-all-monitors" type="bool" value="true"/>
+    </property>
   </property>
 </channel>
