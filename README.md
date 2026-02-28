@@ -24,7 +24,7 @@ This repo contains my personal configuration files for my Linux setup. I use Deb
 You can use the install script to set up symlinks and dependencies:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/NhomNhom0/my-dotfiles/main/bin/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/NhomNhom0/my-dotfiles/main/bin/install_dotfiles.sh | bash
 ```
 
 ## Credits
