@@ -43,7 +43,7 @@ export TORCH_CUDA_ARCH_LIST="7.5"
 export VIMINIT='source $XDG_CONFIG_HOME/vim/.vimrc'
 
 # Conda initialize
-__conda_setup="$('$HOME/miniforge3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+__conda_setup="$("$HOME/miniforge3/bin/conda" 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
@@ -86,7 +86,7 @@ typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 
 # # >>> conda initialize >>>
 # # !! Contents within this block are managed by 'conda init' !!
-# __conda_setup="$('/home/nhomnhom0/miniforge3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+# __conda_setup="$("$HOME/miniforge3/bin/conda" 'shell.zsh' 'hook' 2> /dev/null)"
 # if [ $? -eq 0 ]; then
 #     eval "$__conda_setup"
 # else
@@ -102,15 +102,18 @@ typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 
 # >>> mamba initialize >>>
 # !! Contents within this block are managed by 'mamba shell init' !!
-export MAMBA_EXE="$HOME/miniforge3/bin/mamba"
-export MAMBA_ROOT_PREFIX="$HOME/miniforge3"
-if [ -n "$MAMBA_EXE" ] && [ -x "$MAMBA_EXE" ]; then
-    __mamba_setup="$($MAMBA_EXE shell hook --shell zsh --root-prefix "$MAMBA_ROOT_PREFIX" 2> /dev/null)"
-    if [ $? -eq 0 ]; then
-        eval "$__mamba_setup"
-    else
-        alias mamba="$MAMBA_EXE"
-    fi
-    unset __mamba_setup
+export MAMBA_EXE="$HOME/miniforge3/bin/mamba";
+export MAMBA_ROOT_PREFIX="$HOME/miniforge3";
+unalias mamba 2>/dev/null
+__mamba_setup="$("$MAMBA_EXE" shell hook --shell zsh --root-prefix "$MAMBA_ROOT_PREFIX" 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__mamba_setup"
+else
+    alias mamba="$MAMBA_EXE"  # Fallback on help from mamba activate
 fi
+unset __mamba_setup
 # <<< mamba initialize <<<
+
+. "$HOME/.local/bin/env"
+
+mamba activate base
