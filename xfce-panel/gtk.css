@@ -92,28 +92,36 @@
 
 /* Override Background for tasklist-13 */
 #tasklist-13 .toggle {
-	background-color: transparent;
-	border-radius: 6px;
-	padding:0;
-	margin:0;
+    background-color: transparent;
+    border-radius: 6px;
+    padding: 0;
+    margin: 0;
+}
+
+#tasklist-13 .toggle image {
+    -gtk-icon-transform: scale(0.8);
 }
 
 #tasklist-13 .toggle:checked {
-	border-radius: 6px;
-	background-color: rgba(74, 82, 138, 1);
-	border-bottom: 2.5px solid #F49BAB;
+    border-radius: 6px;
+    background-color: rgba(74, 82, 138, 1);
+    border-bottom: 2.5px solid #F49BAB;
 }
 
-/* Override Background for tasklist-13 */
+/* Override Background for tasklist-17 */
 #tasklist-17 .toggle {
-	background-color: transparent;
-	border-radius: 6px;
-	padding:0;
-	margin:0;
+    background-color: transparent;
+    border-radius: 6px;
+    padding: 0;
+    margin: 0;
+}
+
+#tasklist-17 .toggle image {
+    -gtk-icon-transform: scale(0.8);
 }
 
 #tasklist-17 .toggle:checked {
-	border-radius: 6px;
-	background-color: rgba(74, 82, 138, 1);
-	border-bottom: 2.5px solid #F49BAB;
+    border-radius: 6px;
+    background-color: rgba(74, 82, 138, 1);
+    border-bottom: 2.5px solid #F49BAB;
 }
