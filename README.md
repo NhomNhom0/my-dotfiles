@@ -1,9 +1,9 @@
 # my-dotfiles
 
-This repo contains my personal configuration files for my Linux setup. I use Debian Bookworm with the XFCE desktop environment, and these configs are tailored for my workflow, appearance preferences, and hardware.
+This repo contains my personal configuration files for my Linux setup. I use Debian 13 Trixie with the XFCE desktop environment, and these configs are tailored for my workflow, appearance preferences, and hardware.
 
 ## System Info
-- **Distro:** Debian Bookworm
+- **Distro:** Debian Trixie
 - **Desktop Environment:** XFCE
 - **Display Manager:** LightDM (GTK Greeter)
 - **Terminal:** Kitty
