@@ -35,12 +35,20 @@ alias cls='clear'
 alias sp="tmux kill-session -t spotify_player 2>/dev/null; tmux new-session -d -s spotify_player 'spotify_player'"
 
 # Environment variables
+export PATH=/snap/bin:$PATH
 export CUDA_HOME=/usr/local/cuda-12.6
 export PATH=$CUDA_HOME/bin:$PATH
 export LD_LIBRARY_PATH=$CUDA_HOME/lib64  # Remove any references to cuda-12.8
 export CUDA_DEVICE_ORDER="PCI_BUS_ID"
 export TORCH_CUDA_ARCH_LIST="7.5"
 export VIMINIT='source $XDG_CONFIG_HOME/vim/.vimrc'
+export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
+export ANDROID_HOME=$HOME/android/
+export ANDROID_USER_HOME=$HOME/.android/
+export PATH=$PATH:$ANDROID_HOME/cmdline-tools/latest/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+export PATH=$PATH:$ANDROID_HOME/build-tools/36.0.0/
+
 
 # Conda initialize
 __conda_setup="$("$HOME/miniforge3/bin/conda" 'shell.zsh' 'hook' 2> /dev/null)"
@@ -117,3 +125,24 @@ unset __mamba_setup
 . "$HOME/.local/bin/env"
 
 mamba activate base
+
+# bun completions
+[ -s "/home/nhomnhom0/.bun/_bun" ] && source "/home/nhomnhom0/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+export PATH=~/.npm-global/bin:$PATH
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+export NVM_DIR="$HOME/.config/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+
+# Added by Antigravity CLI installer
+export PATH="/home/nhomnhom0/.local/bin:$PATH"

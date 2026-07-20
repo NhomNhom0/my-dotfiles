@@ -233,6 +233,10 @@ fi
 # Symlink all .sh files in rofi and its subfolders to /usr/local/bin and make them executable
 find "$HOME/my-dotfiles/" -type f -name "*.sh" | while read -r script; do
     script_name=$(basename "$script" .sh)
+    # Skip if the script is named "install"
+    if [ "$script_name" == "install" ]; then
+        continue
+    fi
     target="/usr/local/bin/$script_name"
     if [ ! -L "$target" ]; then
         sudo ln -sf "$script" "$target"
